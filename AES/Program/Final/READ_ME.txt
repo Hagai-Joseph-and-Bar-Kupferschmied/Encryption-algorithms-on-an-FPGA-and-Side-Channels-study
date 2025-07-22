@@ -1,1 +1,0 @@
-This 'XX_input_AES' file is the input plain text and cypher key heandler of the tests that are given in 'AESAVS-NIST.pdf' file.
