@@ -10,6 +10,16 @@ The files are as followed:
 7. KeySbox_input_AES, GFSbox_input_AES.v: one of the modules with different input values keys and data to test the AES algorithm.
 8. KeyExpansion.v: Used at the start of the AES encryption to generate the needed key values for each round
 9. mixCollums.v: basic module of AES round. Each column of the state is treated as a four-term, polynomial and multiplied by a fixed polynomial matrix in GF(2^8)
-10. sbox.v: basic module of AES round. replaces all bytes in the input matrix in a predetermined and non-linear way
+10. sbox.v: Replaces an input byte with a predetermined byte (one for each possible input) in a non-linear way.
 11. shiftRows.v: basic module of AES round. shifts each row. first by 0 bytes, second by 1, third by 2 and fourth by 3.
-12. UNFINISHED!!!!
+12. subbytes.v: basic module of AES round. replaces all bytes in the input matrix in a predetermined and non-linear way. uses sbox.v on each byte at the same time.
+13. top_AES_input.v: An interface to allow easy checking of the system on the FPGA device, using a preselected input module. connects all relevant modules for encryption and uart interface.
+14. transmitter_bau.v: Module transmits UART data from an FPGA
+ Inputs: clk, the internal clock of the FPGA (50MHz)
+ reset, resets the transmitter to it's initial state
+ transmit, transmitter only operates if this bit is on
+data, the data to be transmitted
+ Output: TxD, the serial output
+15. GFSbox_input_AES.v: Test case, differing plaintext. Required by NIST.
+16. VarKey_input_AES.v: Test case, differing keys. Required by NIST.
+17. VarTxt_input_AES.v: Test case, differing plaintext. Required by NIST.
