@@ -4,6 +4,7 @@ In this directory are files related to the CPA.
 - In "Verilog files for CPA" are the running files for the CPA, further explained in their README
 - "CPA.m" is used to create the correlation graphs we saw in "CPA_PIC"
 - "CPA.py" performs the actual attack. Step 1: Perform the current measurements on many known plain texts using the same key.
+
  Step 1: Perform the current measurements on many known plain texts using the same key.
 
  Step 2: For the first key byte: 
