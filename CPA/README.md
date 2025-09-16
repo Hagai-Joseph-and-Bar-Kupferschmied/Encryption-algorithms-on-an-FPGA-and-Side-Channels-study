@@ -5,8 +5,10 @@ In this directory are files related to the CPA.
 - "CPA.m" is used to create the correlation graphs we saw in "CPA_PIC"
 - "CPA.py" performs the actual attack. Step 1: Perform the current measurements on many known plain texts using the same key.
  Step 1: Perform the current measurements on many known plain texts using the same key.
- Step 2: For the first key byte:
+
+ Step 2: For the first key byte: 
  Guess a byte, Finds the hypothetical power for this byte using Hamming Weight. Then repeats for all possible bytes (0x00, 0x01, ... , 0xFF)
+ 
  Step 3: Correlate the hypothetical power with the measurements. The correct byte key guess will show a
 high correlation at the time sample(s) where the device processes that byte (e.g., S-box operation).
 Repeat step 2 and step 3 for all the byte keys (16 bytes in total).
